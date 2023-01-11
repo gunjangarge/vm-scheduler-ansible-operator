@@ -1,0 +1,12 @@
+apiVersion: azure.xyzcompany.com/v1
+kind: AZVMSchedulerStop
+metadata:
+  labels:
+    app.kubernetes.io/name: azvmschedulerstop
+    app.kubernetes.io/instance: azvmschedulerstop-sample
+    app.kubernetes.io/part-of: vm-scheduler-ansible-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: vm-scheduler-ansible-operator
+  name: azvmschedulerstop-sample
+spec:
+  # TODO(user): Add fields here

@@ -1,0 +1,47 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: vm-scheduler-ansible-operator.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions: {}
+  description: Ansible based operator to schedule start/stop of compute instances
+  displayName: vm-scheduler-ansible-operator
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - ansible
+  - aws
+  - az
+  - gcp
+  - compute
+  - schedule
+  links:
+  - name: Vm Scheduler Ansible Operator
+    url: https://vm-scheduler-ansible-operator.domain
+  maintainers:
+  - email: gunjangarge@gmail.com
+    name: Gunjan Garge
+  maturity: alpha
+  provider:
+    name: Gunjan Garge
+    url: https://github.com/gunjangarge/vm-scheduler-ansible-operator
+  version: 0.0.0

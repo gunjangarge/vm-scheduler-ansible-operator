@@ -1,0 +1,12 @@
+apiVersion: gcp.xyzcompany.com/v1
+kind: GCPVMSchedulerStop
+metadata:
+  labels:
+    app.kubernetes.io/name: gcpvmschedulerstop
+    app.kubernetes.io/instance: gcpvmschedulerstop-sample
+    app.kubernetes.io/part-of: vm-scheduler-ansible-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: vm-scheduler-ansible-operator
+  name: gcpvmschedulerstop-sample
+spec:
+  # TODO(user): Add fields here

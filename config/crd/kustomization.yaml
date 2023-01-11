@@ -1,0 +1,11 @@
+# This kustomization.yaml is not intended to be run by itself,
+# since it depends on service name and namespace that are out of this kustomize package.
+# It should be run by config/default
+resources:
+- bases/aws.xyzcompany.com_awsvmschedulerstarts.yaml
+- bases/aws.xyzcompany.com_awsvmschedulerstops.yaml
+- bases/azure.xyzcompany.com_azvmschedulerstops.yaml
+- bases/azure.xyzcompany.com_azvmschedulerstarts.yaml
+- bases/gcp.xyzcompany.com_gcpvmschedulerstarts.yaml
+- bases/gcp.xyzcompany.com_gcpvmschedulerstops.yaml
+#+kubebuilder:scaffold:crdkustomizeresource

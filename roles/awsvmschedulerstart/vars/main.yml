@@ -1,0 +1,12 @@
+---
+# K8S vars
+operator_api_version: "aws.xyzcompany.com/v1"
+operator_kind: "AWSVMSchedulerStart"
+
+# vars file for AWSVMSchedulerStart
+aws_cred_secret_check_msg: "Checking if AWS credential secret {{aws_secret_name}} is present in namespace {{ansible_operator_meta.namespace}}"
+aws_cred_secret_not_present_msg: "AWS credential secret {{aws_secret_name}} is not present in namespace {{ansible_operator_meta.namespace}}"
+aws_cred_secret_present_msg: "AWS credential secret {{aws_secret_name}} is present in namespace {{ansible_operator_meta.namespace}}"
+creating_cronjob_msg: "Creating Cronjob {{ansible_operator_meta.name}} in namespace {{ansible_operator_meta.namespace}}"
+create_cronjob_success_msg: "Successfully created CronJob {{ansible_operator_meta.name}} in namespace {{ansible_operator_meta.namespace}}"
+create_cronjob_failure_msg: "Failure while creating CronJob {{ansible_operator_meta.name}} in namespace {{ansible_operator_meta.namespace}}"

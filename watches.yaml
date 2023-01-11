@@ -1,0 +1,33 @@
+---
+# Use the 'create api' subcommand to add watches to this file.
+- version: v1
+  group: aws.xyzcompany.com
+  kind: AWSVMSchedulerStart
+  playbook: playbooks/awsvmschedulerstart.yml
+  manageStatus: false
+- version: v1
+  group: aws.xyzcompany.com
+  kind: AWSVMSchedulerStop
+  playbook: playbooks/awsvmschedulerstop.yml
+  manageStatus: false
+- version: v1
+  group: azure.xyzcompany.com
+  kind: AZVMSchedulerStop
+  playbook: playbooks/azvmschedulerstop.yml
+  manageStatus: false
+- version: v1
+  group: azure.xyzcompany.com
+  kind: AZVMSchedulerStart
+  playbook: playbooks/azvmschedulerstart.yml
+  manageStatus: false
+- version: v1
+  group: gcp.xyzcompany.com
+  kind: GCPVMSchedulerStart
+  playbook: playbooks/gcpvmschedulerstart.yml
+  manageStatus: false
+- version: v1
+  group: gcp.xyzcompany.com
+  kind: GCPVMSchedulerStop
+  playbook: playbooks/gcpvmschedulerstop.yml
+  manageStatus: false
+#+kubebuilder:scaffold:watch

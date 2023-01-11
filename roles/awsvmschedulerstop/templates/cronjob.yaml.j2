@@ -1,0 +1,42 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: '{{ ansible_operator_meta.name }}'
+  namespace: '{{ ansible_operator_meta.namespace }}'
+spec:
+  schedule: '{{ stop_schedule }}'
+  jobTemplate:
+    metadata:
+      name: '{{ ansible_operator_meta.name }}'
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+          - image: '{{ image }}'
+            name: '{{ ansible_operator_meta.name }}'
+            resources: {}
+            env:
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: '{{ aws_secret_name }}'
+                  key: aws-access-key-id
+                  optional: false 
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: '{{ aws_secret_name }}'
+                  key: aws-secret-access-key
+                  optional: false
+            - name: AWS_DEFAULT_REGION
+              valueFrom:
+                secretKeyRef:
+                  name: '{{ aws_secret_name }}'
+                  key: region
+                  optional: false
+            - name: ec2_command
+              value: 'stop'
+            - name: ec2_instanceIds
+              value: '{{ instance_ids }}'

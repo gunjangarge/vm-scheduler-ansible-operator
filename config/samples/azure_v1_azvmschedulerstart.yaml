@@ -1,0 +1,12 @@
+apiVersion: azure.xyzcompany.com/v1
+kind: AZVMSchedulerStart
+metadata:
+  labels:
+    app.kubernetes.io/name: azvmschedulerstart
+    app.kubernetes.io/instance: azvmschedulerstart-sample
+    app.kubernetes.io/part-of: vm-scheduler-ansible-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: vm-scheduler-ansible-operator
+  name: azvmschedulerstart-sample
+spec:
+  # TODO(user): Add fields here

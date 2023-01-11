@@ -1,0 +1,52 @@
+domain: xyzcompany.com
+layout:
+- ansible.sdk.operatorframework.io/v1
+multigroup: true
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: vm-scheduler-ansible-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: xyzcompany.com
+  group: aws
+  kind: AWSVMSchedulerStart
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: xyzcompany.com
+  group: aws
+  kind: AWSVMSchedulerStop
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: xyzcompany.com
+  group: azure
+  kind: AZVMSchedulerStop
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: xyzcompany.com
+  group: azure
+  kind: AZVMSchedulerStart
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: xyzcompany.com
+  group: gcp
+  kind: GCPVMSchedulerStart
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: xyzcompany.com
+  group: gcp
+  kind: GCPVMSchedulerStop
+  version: v1
+version: "3"

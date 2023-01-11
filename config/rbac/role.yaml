@@ -1,0 +1,155 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+  ##
+  ## Base operator rules
+  ##
+  - apiGroups:
+      - ""
+    resources:
+      - secrets
+      - pods
+      - pods/exec
+      - pods/log
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - apps
+    resources:
+      - deployments
+      - daemonsets
+      - replicasets
+      - statefulsets
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - batch
+    resources:
+      - cronjobs
+      - jobs
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  ##
+  ## Rules for aws.xyzcompany.com/v1, Kind: AWSVMSchedulerStart
+  ##
+  - apiGroups:
+      - aws.xyzcompany.com
+    resources:
+      - awsvmschedulerstarts
+      - awsvmschedulerstarts/status
+      - awsvmschedulerstarts/finalizers
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  ##
+  ## Rules for aws.xyzcompany.com/v1, Kind: AWSVMSchedulerStop
+  ##
+  - apiGroups:
+      - aws.xyzcompany.com
+    resources:
+      - awsvmschedulerstops
+      - awsvmschedulerstops/status
+      - awsvmschedulerstops/finalizers
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  ##
+  ## Rules for azure.xyzcompany.com/v1, Kind: AZVMSchedulerStop
+  ##
+  - apiGroups:
+      - azure.xyzcompany.com
+    resources:
+      - azvmschedulerstops
+      - azvmschedulerstops/status
+      - azvmschedulerstops/finalizers
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  ##
+  ## Rules for azure.xyzcompany.com/v1, Kind: AZVMSchedulerStart
+  ##
+  - apiGroups:
+      - azure.xyzcompany.com
+    resources:
+      - azvmschedulerstarts
+      - azvmschedulerstarts/status
+      - azvmschedulerstarts/finalizers
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  ##
+  ## Rules for gcp.xyzcompany.com/v1, Kind: GCPVMSchedulerStart
+  ##
+  - apiGroups:
+      - gcp.xyzcompany.com
+    resources:
+      - gcpvmschedulerstarts
+      - gcpvmschedulerstarts/status
+      - gcpvmschedulerstarts/finalizers
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  ##
+  ## Rules for gcp.xyzcompany.com/v1, Kind: GCPVMSchedulerStop
+  ##
+  - apiGroups:
+      - gcp.xyzcompany.com
+    resources:
+      - gcpvmschedulerstops
+      - gcpvmschedulerstops/status
+      - gcpvmschedulerstops/finalizers
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+#+kubebuilder:scaffold:rules

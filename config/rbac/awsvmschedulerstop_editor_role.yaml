@@ -1,0 +1,31 @@
+# permissions for end users to edit awsvmschedulerstops.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: awsvmschedulerstop-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: vm-scheduler-ansible-operator
+    app.kubernetes.io/part-of: vm-scheduler-ansible-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: awsvmschedulerstop-editor-role
+rules:
+- apiGroups:
+  - aws.xyzcompany.com
+  resources:
+  - awsvmschedulerstops
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - aws.xyzcompany.com
+  resources:
+  - awsvmschedulerstops/status
+  verbs:
+  - get
